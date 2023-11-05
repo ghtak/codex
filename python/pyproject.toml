@@ -1,12 +1,12 @@
 [tool.poetry]
-name = "async"
+name = "codex-python"
 version = "0.1.0"
 description = ""
-authors = ["ghtak <gwonhyeong.tak@gmail.com>"]
+authors = ["gwonhyeong.tak <gwonhyeong.tak@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.12"
 
 
 [build-system]

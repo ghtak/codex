@@ -128,8 +128,10 @@ if __name__ == "__main__":
 
     # for item in s3_api.ls("matilda-asset-hub-backend/dvc_repo/1/14/"):
     # for item in s3_api.ls("dvc_repo/1/", with_recursive=True):
-    for item in s3_api.ls("export1/20230621014231/"):
-        print(item)
+    file_counts = 0
+    for item in s3_api.ls("", with_recursive=True):
+        file_counts += 1
+    print(file_counts)
 
     # s3_api.rm_dir('1/')
 
