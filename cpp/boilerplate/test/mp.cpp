@@ -8,17 +8,17 @@ TEST(MetaProgramming_Seq , Seq) {
     static_assert(
         std::is_same<
             index_sequence<0>,
-            make_index_sequence<1>::type>::value);
+            make_index_sequence<1>::type>::value, "");
 
     static_assert(
         std::is_same<
             index_sequence<0,1,2,3,4,5,6,7,8,9,10,11>,
-            make_index_sequence<12>::type>::value);
+            make_index_sequence<12>::type>::value, "");
 
     static_assert(
         std::is_same<
             make_index_sequence0<12>::type,
-            make_index_sequence<12>::type>::value);
+            make_index_sequence<12>::type>::value, "");
 }
 
 
@@ -26,67 +26,67 @@ TEST(MetaProgramming_TL , TL) {
     static_assert(
         std::is_same<
             codex::push_back<codex::type_list<int>,double>::type ,
-            codex::type_list<int,double>>::value
+            codex::type_list<int,double>>::value, ""
     );
 
     static_assert(
         std::is_same<
             codex::push_back<codex::type_list<int>,double,short>::type ,
-            codex::type_list<int,double,short>>::value
+            codex::type_list<int,double,short>>::value, ""
     );
 
     static_assert(
         std::is_same<
             codex::push_front<codex::type_list<int>,double,short>::type ,
-            codex::type_list<double,short,int>>::value
+            codex::type_list<double,short,int>>::value, ""
     );
 
     static_assert(
         std::is_same<
             codex::at<0,codex::type_list<double,short,int>>::type ,
-            double>::value
+            double>::value, ""
     );
 
     static_assert(
         std::is_same<
             codex::at<1,codex::type_list<double,short,int>>::type ,
-            short>::value
+            short>::value, ""
     );
     
     static_assert(
         std::is_same<
             codex::remove_at<0,codex::type_list<double,short,int>>::type ,
-            codex::type_list<short,int>>::value
+            codex::type_list<short,int>>::value, ""
     );
 
     static_assert(
         std::is_same<
             codex::remove_at<1,codex::type_list<double,short,int>>::type ,
-            codex::type_list<double,int>>::value
+            codex::type_list<double,int>>::value, ""
     );
 
     static_assert(
         std::is_same<
             codex::remove_at<2,codex::type_list<double,short,int>>::type ,
-            codex::type_list<double,short>>::value
+            codex::type_list<double,short>>::value, ""
     );
 
     static_assert(
         std::is_same<
             codex::pop_back<codex::type_list<double,short,int>>::type ,
-            codex::type_list<double,short>>::value
+            codex::type_list<double,short>>::value, ""
     );
 
     static_assert(
         std::is_same<
             codex::pop_front<codex::type_list<double,short,int>>::type ,
-            codex::type_list<short,int>>::value
+            codex::type_list<short,int>>::value, ""
     );
     
     static_assert(
         std::is_same<
             codex::pop_front<codex::type_list<double,short,int>>::type::rebind<std::tuple>::type ,
-            std::tuple<short,int>>::value
+            std::tuple<short,int>>::value, ""
     );
 }
 
